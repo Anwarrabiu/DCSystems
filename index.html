@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DC Systems - Empowering businesses with digital solutions, IT consultancy, and professional training services.">
+  <meta name="keywords" content="digital solutions, IT consultancy, training, business technology, digital transformation">
+  <title>DC Systems - Digital Solutions &amp; Consultancy</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f3f4f6;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--background);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: -2rem auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .team-member h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .team-member .role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--surface);
+            padding: 4rem 2rem;
+            width: 100%;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-company {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .contact-info {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 250px;
+            background: var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            margin-top: 2rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #1e3a8a;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* About Page Specific */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .mission-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .mission-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .value-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .value-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Services Page Specific */
+        .service-detail {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .service-detail h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .feature-check {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .benefits-list {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .benefits-list h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .benefits-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .benefits-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .benefits-list li::before {
+            content: "→";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Form Success Message */
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Page Transitions */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="page-wrapper"><!-- Navigation -->
+   <nav>
+    <div class="nav-container">
+     <div class="logo" id="company-name">
+      DC Systems
+     </div><button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">☰</button>
+     <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showPage('home', event)" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('about', event)">About</a></li>
+      <li><a href="#" onclick="showPage('services', event)">Services</a></li>
+      <li><a href="#" onclick="showPage('contact', event)">Contact</a></li>
+     </ul>
+    </div>
+   </nav>
+   <main><!-- Home Page -->
+    <div id="home" class="page active">
+     <section class="hero">
+      <div class="hero-content">
+       <h1 id="hero-headline">Empowering Businesses with Digital Solutions, Consultancy, and Training</h1>
+       <p id="hero-description">We help organizations and businesses transform digitally through innovative solutions, expert consultancy, and comprehensive training programs.</p><a href="#" onclick="showPage('contact', event)" class="cta-button" id="cta-button">Get Started</a>
+      </div>
+     </section>
+     <div class="container">
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
+      <div class="services-grid">
+       <div class="service-card">
+        <div class="service-icon">
+         💻
+        </div>
+        <h3>Digital Solutions</h3>
+        <p>Custom web and mobile applications, digital products, and automation tools designed to streamline your business operations and enhance customer experience.</p>
+       </div>
+       <div class="service-card">
+        <div class="service-icon">
+         📊
+        </div>
+        <h3>IT Consultancy</h3>
+        <p>Strategic guidance for digital transformation, technology advisory, and business process optimization to help you make informed technology decisions.</p>
+       </div>
+       <div class="service-card">
+        <div class="service-icon">
+         🎓
+        </div>
+        <h3>Professional Training</h3>
+        <p>Comprehensive training programs covering digital literacy, cybersecurity, productivity tools, and essential business technology skills for your team.</p>
+       </div>
+      </div>
+     </div>
+     <section class="testimonials">
+      <div class="container">
+       <h2 class="section-title" style="color: var(--text-dark);">Success Stories</h2>
+       <div class="testimonial-grid">
+        <div class="testimonial-card">
+         <p class="testimonial-text">"DC Systems transformed our business operations with their innovative digital solutions. Their team understood our needs perfectly and delivered beyond expectations."</p>
+         <p class="testimonial-author">Sarah Johnson</p>
+         <p class="testimonial-company">TechFlow Industries</p>
+        </div>
+        <div class="testimonial-card">
+         <p class="testimonial-text">"The training programs were exceptional. Our team gained valuable skills that immediately improved our productivity and digital capabilities."</p>
+         <p class="testimonial-author">Michael Chen</p>
+         <p class="testimonial-company">Global Enterprises</p>
+        </div>
+        <div class="testimonial-card">
+         <p class="testimonial-text">"Their consultancy services helped us navigate our digital transformation journey smoothly. Professional, knowledgeable, and always available."</p>
+         <p class="testimonial-author">Emma Williams</p>
+         <p class="testimonial-company">Innovation Corp</p>
+        </div>
+       </div>
+      </div>
+     </section>
+
+    </div><!-- About Page -->
+    <div id="about" class="page">
+     <section class="hero" style="padding: 4rem 2rem;">
+      <div class="hero-content">
+       <h1>About DC Systems</h1>
+       <p>Leading the way in digital transformation and business technology solutions</p>
+      </div>
+     </section>
+     <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light); line-height: 1.8; font-size: 1.1rem;">DC Systems is a forward-thinking digital solutions company dedicated to empowering businesses, organizations, and individuals with cutting-edge technology and expert guidance. Founded with a vision to bridge the digital divide, we specialize in providing comprehensive digital solutions, strategic IT consultancy, and professional training services.</p>
+      <div class="mission-vision">
+       <div class="mission-card">
+        <h3>Our Mission</h3>
+        <p>To empower businesses and individuals with innovative digital solutions and knowledge, enabling them to thrive in an increasingly digital world. We are committed to delivering excellence, fostering digital literacy, and driving meaningful transformation.</p>
+       </div>
+       <div class="mission-card">
+        <h3>Our Vision</h3>
+        <p>To be the leading provider of comprehensive digital solutions and training services, recognized for our innovation, expertise, and commitment to client success. We envision a world where technology is accessible and beneficial to all.</p>
+       </div>
+      </div>
+      <h2 class="section-title" style="margin-top: 4rem;">Our Values</h2>
+      <div class="values-list">
+       <div class="value-item">
+        <div class="value-icon">
+         🎯
+        </div>
+        <div class="value-content">
+         <h4>Excellence</h4>
+         <p>We strive for excellence in every project and training program we deliver.</p>
+        </div>
+       </div>
+       <div class="value-item">
+        <div class="value-icon">
+         🤝
+        </div>
+        <div class="value-content">
+         <h4>Integrity</h4>
+         <p>We conduct business with honesty, transparency, and ethical practices.</p>
+        </div>
+       </div>
+       <div class="value-item">
+        <div class="value-icon">
+         💡
+        </div>
+        <div class="value-content">
+         <h4>Innovation</h4>
+         <p>We embrace creativity and stay ahead of technological advancements.</p>
+        </div>
+       </div>
+       <div class="value-item">
+        <div class="value-icon">
+         🌟
+        </div>
+        <div class="value-content">
+         <h4>Client Focus</h4>
+         <p>Your success is our priority. We tailor solutions to meet your unique needs.</p>
+        </div>
+       </div>
+      </div>
+      <h2 class="section-title" style="margin-top: 4rem;">Meet Our Team</h2>
+      <div class="team-grid">
+       <div class="team-member">
+        <div class="team-avatar">
+         👨‍💼
+        </div>
+        <h3>Anwar Rabiu</h3>
+        <p class="role">Founder &amp; CEO</p>
+        <p>Visionary leader with 10+ years in digital transformation and business technology.</p>
+       </div>
+       <div class="team-member">
+        <div class="team-avatar">
+         👩‍💻
+        </div>
+        <h3>Jacob Musa</h3>
+        <p class="role">Chief Technology Officer</p>
+        <p>Expert in software architecture and innovative digital solutions development.</p>
+       </div>
+       <div class="team-member">
+        <div class="team-avatar">
+         👨‍🏫
+        </div>
+        <h3>James Ode</h3>
+        <p class="role">Head of Training</p>
+        <p>Passionate educator specializing in corporate training and skill development.</p>
+       </div>
+       <div class="team-member">
+        <div class="team-avatar">
+         👩‍💼
+        </div>
+        <h3>Maria Abdu</h3>
+        <p class="role">Business Consultant</p>
+        <p>Strategic advisor helping businesses navigate digital transformation successfully.</p>
+       </div>
+      </div>
+      <div style="background: var(--surface); padding: 3rem; border-radius: 12px; margin-top: 4rem; text-align: center;">
+       <h2 style="margin-bottom: 1rem; color: var(--text-dark);">Why Choose DC Systems?</h2>
+       <div class="services-grid" style="margin-top: 2rem;">
+        <div style="text-align: center;">
+         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+          ✓
+         </div>
+         <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Proven Expertise</h4>
+         <p style="color: var(--text-light);">Years of experience delivering successful digital projects</p>
+        </div>
+        <div style="text-align: center;">
+         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+          ✓
+         </div>
+         <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Client-Centric Approach</h4>
+         <p style="color: var(--text-light);">Customized solutions tailored to your specific needs</p>
+        </div>
+        <div style="text-align: center;">
+         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+          ✓
+         </div>
+         <h4 style="margin-bottom: 0.5rem; color: var(--text-dark);">Ongoing Support</h4>
+         <p style="color: var(--text-light);">Continuous assistance and maintenance for your peace of mind</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    
+    <!-- Services Page -->
+    <div id="services" class="page">
+     <section class="hero" style="padding: 4rem 2rem;">
+      <div class="hero-content">
+       <h1>Our Services</h1>
+       <p>Comprehensive solutions to drive your digital success</p>
+      </div>
+     </section>
+     <div class="container">
+      <div class="service-detail">
+       <h3>💻 Digital Solutions</h3>
+       <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.8;">Transform your business with our cutting-edge digital solutions. We develop custom applications, websites, and digital products that streamline operations, enhance customer experience, and drive business growth.</p>
+       <h4 style="margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-dark);">What We Offer:</h4>
+       <div class="service-features">
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Web Development</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Responsive, modern websites built with latest technologies</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Mobile Applications</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Native and cross-platform mobile app development</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Digital Products</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Custom software solutions for specific business needs</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Automation Tools</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Workflow automation to improve efficiency</p>
+         </div>
+        </div>
+       </div>
+       <div class="benefits-list">
+        <h4>Expected Outcomes:</h4>
+        <ul>
+         <li>Increased operational efficiency through automation</li>
+         <li>Enhanced customer engagement and satisfaction</li>
+         <li>Scalable solutions that grow with your business</li>
+         <li>Competitive advantage through innovative technology</li>
+        </ul>
+       </div>
+      </div>
+      <div class="service-detail">
+       <h3>📊 IT Consultancy</h3>
+       <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.8;">Navigate the complex world of technology with confidence. Our experienced consultants provide strategic guidance to help you make informed decisions about technology investments, digital transformation, and business process optimization.</p>
+       <h4 style="margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-dark);">What We Offer:</h4>
+       <div class="service-features">
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Digital Transformation</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Strategic roadmap for modernizing your business</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Technology Advisory</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Expert guidance on technology selection and implementation</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Process Optimization</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Streamline operations for maximum efficiency</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>IT Strategy Planning</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Long-term technology planning aligned with business goals</p>
+         </div>
+        </div>
+       </div>
+       <div class="benefits-list">
+        <h4>Expected Outcomes:</h4>
+        <ul>
+         <li>Clear technology roadmap aligned with business objectives</li>
+         <li>Optimized business processes and workflows</li>
+         <li>Reduced technology costs through better decision-making</li>
+         <li>Improved competitive positioning in your market</li>
+        </ul>
+       </div>
+      </div>
+      <div class="service-detail">
+       <h3>🎓 Professional Training Programs</h3>
+       <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.8;">Empower your team with essential digital skills. Our comprehensive training programs are designed to enhance digital literacy, improve productivity, and ensure your organization stays ahead in the digital age.</p>
+       <h4 style="margin-top: 1.5rem; margin-bottom: 1rem; color: var(--text-dark);">What We Offer:</h4>
+       <div class="service-features">
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Digital Literacy</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Fundamental digital skills for modern workplace</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Cybersecurity Awareness</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Essential security practices and threat prevention</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Productivity Tools</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Master essential business software and applications</p>
+         </div>
+        </div>
+        <div class="feature-item"><span class="feature-check">✓</span>
+         <div><strong>Business Tech Skills</strong>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Advanced training in business technology solutions</p>
+         </div>
+        </div>
+       </div>
+       <div class="benefits-list">
+        <h4>Expected Outcomes:</h4>
+        <ul>
+         <li>Enhanced team productivity and efficiency</li>
+         <li>Improved digital skills across your organization</li>
+         <li>Better security awareness and practices</li>
+         <li>Increased confidence in using technology</li>
+         <li>Reduced support costs through self-sufficiency</li>
+        </ul>
+       </div>
+      </div>
+      <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 3rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+       <h2 style="margin-bottom: 1rem;">Ready to Get Started?</h2>
+       <p style="margin-bottom: 2rem; opacity: 0.95;">Let's discuss how we can help transform your business with our comprehensive digital solutions.</p><a href="#" onclick="showPage('contact', event)" class="cta-button">Contact Us Today</a>
+      </div>
+     </div>
+    </div><!-- Contact Page -->
+    <div id="contact" class="page">
+     <section class="hero" style="padding: 4rem 2rem;">
+      <div class="hero-content">
+       <h1>Contact Us</h1>
+       <p>Get in touch with our team - we're here to help</p>
+      </div>
+     </section>
+     <div class="container">
+      <div class="contact-grid">
+       <div>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-dark);">Send us a Message</h2>
+        <div class="success-message" id="successMessage">
+         Thank you! Your message has been sent successfully. We'll get back to you soon.
+        </div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+         <div class="form-group"><label for="name">Full Name</label> <input type="text" id="name" name="name" required>
+         </div>
+         <div class="form-group"><label for="email">Email Address</label> <input type="email" id="email" name="email" required>
+         </div>
+         <div class="form-group"><label for="message">Your Message</label> <textarea id="message" name="message" required></textarea>
+         </div><button type="submit" class="submit-button" id="submitButton">Send Message</button>
+        </form>
+       </div>
+       <div>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-dark);">Contact Information</h2>
+        <div class="contact-info">
+         <div class="contact-item">
+          <div class="contact-icon">
+           📍
+          </div>
+          <div class="contact-details">
+           <h3>Address</h3>
+           <p id="company-address">INUWA DUTSE ESTATE DANMASARA Dutse, Jigawa, Nigeria</p>
+          </div>
+         </div>
+         <div class="contact-item">
+          <div class="contact-icon">
+           📞
+          </div>
+          <div class="contact-details">
+           <h3>Phone</h3>
+           <p id="company-phone">+234 7064399780</p>
+          </div>
+         </div>
+         <div class="contact-item">
+          <div class="contact-icon">
+           ✉️
+          </div>
+          <div class="contact-details">
+           <h3>Email</h3>
+           <p id="company-email">anwarrabiu002@gmail.com</p>
+          </div>
+         </div>
+         <div class="contact-item">
+          <div class="contact-icon">
+           🕐
+          </div>
+          <div class="contact-details">
+           <h3>Business Hours</h3>
+           <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+           <p>Saturday - Sunday: Closed</p>
+          </div>
+         </div>
+        </div>
+        <div class="map-placeholder">
+         <p>📍 Map Location Placeholder</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main><!-- Newsletter Section -->
+   <section class="newsletter">
+    <div class="newsletter-content">
+     <h2>Stay Updated</h2>
+     <p>Subscribe to our newsletter for the latest insights on digital transformation, technology trends, and training opportunities.</p>
+     <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)"><input type="email" placeholder="Enter your email address" required aria-label="Email address for newsletter"> <button type="submit">Subscribe</button>
+     </form>
+    </div>
+   </section><!-- Footer -->
+   <footer>
+    <div class="footer-content">
+     <div class="footer-section">
+      <h3>DC Systems</h3>
+      <p style="color: rgba(255,255,255,0.8); margin-top: 1rem; line-height: 1.6;">Empowering businesses with innovative digital solutions, expert consultancy, and comprehensive training programs.</p>
+      <div class="social-icons"><a href="#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">💼</a> <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">🐦</a> <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a> <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📷</a>
+      </div>
+     </div>
+     <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+       <li><a href="#" onclick="showPage('home', event)">Home</a></li>
+       <li><a href="#" onclick="showPage('about', event)">About Us</a></li>
+       <li><a href="#" onclick="showPage('services', event)">Services</a></li>
+       <li><a href="#" onclick="showPage('contact', event)">Contact</a></li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>Services</h3>
+      <ul class="footer-links">
+       <li><a href="#" onclick="showPage('services', event)">Digital Solutions</a></li>
+       <li><a href="#" onclick="showPage('services', event)">IT Consultancy</a></li>
+       <li><a href="#" onclick="showPage('services', event)">Professional Training</a></li>
+       <li><a href="#" onclick="showPage('services', event)">Technology Advisory</a></li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>Contact Info</h3>
+      <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;" id="footer-phone">+2347064399780</p>
+      <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;" id="footer-email">anwarrabiu002@gmail.com</p>
+      <p style="color: rgba(255,255,255,0.8);" id="footer-address">INUWA DUTSE ESTATE DANMASARA Dutse, Jigawa, Nigeria<br>
+       </p>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p id="footer-copyright">© 2024 DC Systems. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            hero_headline: "Empowering Businesses with Digital Solutions, Consultancy, and Training",
+            hero_description: "We help organizations and businesses transform digitally through innovative solutions, expert consultancy, and comprehensive training programs.",
+            cta_button: "Get Started",
+            company_name: "DC Systems",
+            company_phone: "+2347064399780 ",
+            company_email: "anwarrabiu002@gmail.com",
+            company_address: "INUWA DUTSE ESTATE DANMASARA Dutse, Jigawa, Nigeria",
+            footer_text: "© 2024 DC Systems. All rights reserved."
+        };
+
+        // Page navigation
+        function showPage(pageId, event) {
+            if (event) {
+                event.preventDefault();
+            }
+            
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event?.target.classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Contact form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            const successMessage = document.getElementById('successMessage');
+            const form = document.getElementById('contactForm');
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Reset form
+                form.reset();
+                
+                // Reset button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }, 1000);
+        }
+
+        // Newsletter form submission
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const button = form.querySelector('button');
+            const originalText = button.textContent;
+            
+            // Show loading state
+            button.textContent = 'Subscribing...';
+            button.disabled = true;
+            
+            // Simulate subscription
+            setTimeout(() => {
+                button.textContent = 'Subscribed! ✓';
+                form.reset();
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }, 2000);
+            }, 1000);
+        }
+
+        // Config change handler
+        async function onConfigChange(config) {
+            // Update hero section
+            const heroHeadline = document.getElementById('hero-headline');
+            if (heroHeadline) {
+                heroHeadline.textContent = config.hero_headline || defaultConfig.hero_headline;
+            }
+            
+            const heroDescription = document.getElementById('hero-description');
+            if (heroDescription) {
+                heroDescription.textContent = config.hero_description || defaultConfig.hero_description;
+            }
+            
+            const ctaButton = document.getElementById('cta-button');
+            if (ctaButton) {
+                ctaButton.textContent = config.cta_button || defaultConfig.cta_button;
+            }
+            
+            // Update company information
+            const companyNameElements = [
+                document.getElementById('company-name'),
+                document.querySelector('.logo')
+            ];
+            companyNameElements.forEach(el => {
+                if (el) el.textContent = config.company_name || defaultConfig.company_name;
+            });
+            
+            const companyPhone = document.getElementById('company-phone');
+            if (companyPhone) {
+                companyPhone.textContent = config.company_phone || defaultConfig.company_phone;
+            }
+            
+            const footerPhone = document.getElementById('footer-phone');
+            if (footerPhone) {
+                footerPhone.textContent = config.company_phone || defaultConfig.company_phone;
+            }
+            
+            const companyEmail = document.getElementById('company-email');
+            if (companyEmail) {
+                companyEmail.textContent = config.company_email || defaultConfig.company_email;
+            }
+            
+            const footerEmail = document.getElementById('footer-email');
+            if (footerEmail) {
+                footerEmail.textContent = config.company_email || defaultConfig.company_email;
+            }
+            
+            const companyAddress = document.getElementById('company-address');
+            if (companyAddress) {
+                companyAddress.textContent = config.company_address || defaultConfig.company_address;
+            }
+            
+            const footerAddress = document.getElementById('footer-address');
+            if (footerAddress) {
+                footerAddress.innerHTML = (config.company_address || defaultConfig.company_address).replace(', ', '<br>');
+            }
+            
+            const footerCopyright = document.getElementById('footer-copyright');
+            if (footerCopyright) {
+                footerCopyright.textContent = config.footer_text || defaultConfig.footer_text;
+            }
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig: defaultConfig,
+                onConfigChange: onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+                    ["hero_description", config.hero_description || defaultConfig.hero_description],
+                    ["cta_button", config.cta_button || defaultConfig.cta_button],
+                    ["company_name", config.company_name || defaultConfig.company_name],
+                    ["company_phone", config.company_phone || defaultConfig.company_phone],
+                    ["company_email", config.company_email || defaultConfig.company_email],
+                    ["company_address", config.company_address || defaultConfig.company_address],
+                    ["footer_text", config.footer_text || defaultConfig.footer_text]
+                ])
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && !this.hasAttribute('onclick')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a51847de11e3dac',t:'MTc2NDI0NTM3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
